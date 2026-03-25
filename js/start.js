@@ -106,7 +106,4 @@ function animationLoop(){
  *  
  */
 
-
-
-
 }

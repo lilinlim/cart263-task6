@@ -35,6 +35,11 @@ class DrawingBoard {
     }
     if(this.drawingBoardId ==="partD"){
       console.log("in D")
+      for (let i = 0; i < this.objectsOnCanvas.length; i++) {
+        if (typeof this.objectsOnCanvas[i].updatePositionRect === "function") {
+          this.objectsOnCanvas[i].updatePositionRect(this.mouseOffsetX, this.mouseOffsetY);
+        }
+      }
    }
   }
 
@@ -58,6 +63,12 @@ class DrawingBoard {
     }
     if(this.drawingBoardId ==="partD"){
       console.log("in D")
+      for (let i = 0; i < this.objectsOnCanvas.length; i++) {
+        if (typeof this.objectsOnCanvas[i].changeColor === "function") {
+          let randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+          this.objectsOnCanvas[i].changeColor(randomColor);
+        }
+      }
       }
   }
   /* method to add obj to canvas */
