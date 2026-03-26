@@ -8,10 +8,11 @@ class FreeStyleObj {
     this.stroke_color = s_color;
     this.theta = 0;
     this.length = length;
-    this.yOffset = 20;
+    this.yOffset = 10;
     this.angularSpeed = .07;
     this.context = context;
     this.micLevel = 0; //variable to store the mic level for the rectangle
+    this.ySpeed = -1;
   }
   //method to set the mic level from the start.js file
   setMicLevel(level) {
@@ -38,7 +39,14 @@ class FreeStyleObj {
     // this.x+=1;
     //set location of the freestyle object to be in the middle of the canvas a
     this.x = this.context.canvas.width / 2 - this.length / 2;
-    this.y = this.context.canvas.height / 2 - this.yOffset / 2;
+    // this.y = this.context.canvas.height / 2 - this.yOffset / 2;
+    this.y += this.ySpeed;
+        if (this.y <= 0) {
+        this.ySpeed = 1
+      }
+      if (this.y + this.yOffset + 4 >= this.context.canvas.height) { //+ this.height
+        this.ySpeed = -1
+      }
 
     // flip the freestyle object over its x-axis on the canvas on window load
     this.theta += this.angularSpeed * 60;
