@@ -10,6 +10,10 @@ class CircularObj {
     this.startAngle = 0;
     this.endAngle = Math.PI * 2; //full rotation
     this.context = context;
+
+    //setting velocity
+    this.vx = 3;
+    this.vy = 3;
   }
 
   display() {
@@ -34,5 +38,20 @@ class CircularObj {
     //update circle
     //this.x += 1;
     //console.log("circle update");
+
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if(this.x > 400){
+      this.vx = -this.vx;
+    } else if(this.x < 0){
+      this.vx = -this.vx;
+    }
+
+    if(this.y > 300){
+      this.vy = -this.vy;
+    } else if(this.y < 0){
+      this.vy = -this.vy;
+    }
   }
 }
