@@ -39,7 +39,7 @@ function go_all_stuff() {
 
     let drawingBoardC = new DrawingBoard(theCanvases[2], theContexts[2], theCanvases[2].id);
     //add a freestyle object to canvas C
-    drawingBoardC.addObj(new FreeStyleObj(10, 100, 300, "#CF9FFF", "#CF9FFF", drawingBoardC.context))
+    drawingBoardC.addObj(new FreeStyleObj(0, 100, 400, "#CF9FFF", "#CF9FFF", drawingBoardC.context))
     drawingBoardC.display();
 
     let drawingBoardD = new DrawingBoard(theCanvases[3], theContexts[3], theCanvases[3].id);

@@ -8,9 +8,10 @@ class FreeStyleObj {
       this.stroke_color = s_color;
       this.theta = 0;
       this.length = length;
-      this.yOffset = 20;
+      this.yOffset = 10;
       this.angularSpeed = .07;
       this.context =context;
+      this.ySpeed = -1;
 
     }
   
@@ -31,7 +32,14 @@ class FreeStyleObj {
     update(){
         //update freestyle
        // console.log("free style update")
-       // this.x+=1;
+       this.y += this.ySpeed;
+        if (this.y - this.yOffset + 7 <= 0) {
+        this.ySpeed = 1
+      }
+      if (this.y + this.yOffset + 4 >= this.context.canvas.height) { //+ this.height
+        this.ySpeed = -1
+      }
+      //  this.angularSpeed += 0.05;
     }
   }
   
