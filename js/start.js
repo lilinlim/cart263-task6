@@ -83,7 +83,7 @@ function go_all_stuff() {
      *  
      */
 
-    //Microphone access and audio processing setup for Drawing Board B
+    //Microphone access and audio processing setup for Drawing Board B AND Board C
     //Reference: Web Audio API example code provided in class notes and https://dobrian.github.io/cmp/topics/sample-recording-and-playback-with-web-audio-api/3.microphone-input-and-recording.html#:~:text=Accessing%20Your%20Microphone,as%20an%20argument%20to%20the%20.
     //https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
     //Initialize mic variables
@@ -141,6 +141,7 @@ function go_all_stuff() {
                 let level = avg / 255;
                 let boostedLevel = Math.min(1, level * 4);
                 rectangleObjB.setMicLevel(boostedLevel);
+                freeStyleObjC.setMicLevel(boostedLevel);
 
                 requestAnimationFrame(visualizeAudio);
             }
@@ -164,6 +165,8 @@ function go_all_stuff() {
      * -> the code for the microphone has NOT been added  - you need to implement it correctly...
      *  
      */
+
+
 
     /** TASK 4:(Video - recorded - )
      * // add filters or manipulate the pixels... take user input from the boxes..
